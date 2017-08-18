@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="./vue.js" charset="UTF-8"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="welcome" :title="title">
+        {{ message }}
+    </div>
+    <div>
+        <button v-on:click="logMessage">按钮</button>
+    </div>
+    <div>
+        <input v-model="message">
+    </div>
+
+    <ol>
+        <li v-for="comment in comments">
+            {{ comment.content }}
+        </li>
+    </ol>
+
+    <ol>
+        <mycomment
+                v-for="com in comments"
+                :comment="com">
+        </mycomment>
+    </ol>
+
+
+</div>
+<script src="./index.js" charset="UTF-8"></script>
+</body>
+</html>
